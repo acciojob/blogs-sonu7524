@@ -12,4 +12,6 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
+    @Query("select count(u) from User u")
+    long countNumberOfImages();
 }
