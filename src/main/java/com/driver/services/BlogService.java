@@ -29,6 +29,7 @@ public class BlogService {
         User user = userRepository1.findById(userId).get();
         List<Blog> blogList = user.getBlogList();
         blogList.add(blog);
+        user.setBlogList(blogList);
         userRepository1.save(user);
         //set foreign key
         blog.setUser(user);
