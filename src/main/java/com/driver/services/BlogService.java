@@ -27,6 +27,7 @@ public class BlogService {
         blog.setTitle(title);
         blog.setContent(content);
         User user = userRepository1.findById(userId).get();
+        blog.setPubDate(new Date());
         //set foreign key
         blog.setUser(user);
 
