@@ -27,10 +27,11 @@ public class BlogService {
         blog.setTitle(title);
         blog.setContent(content);
         User user = userRepository1.findById(userId).get();
-        blog.setPubDate(new Date());
+        List<Blog> blogList = user.getBlogList();
+        blogList.add(blog);
+        userRepository1.save(user);
         //set foreign key
         blog.setUser(user);
-
         blogRepository1.save(blog);
         return blog;
     }
