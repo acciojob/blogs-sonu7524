@@ -42,6 +42,7 @@ public class ImageService {
         List<Image> imageList = imageRepository2.findAll();
         for(int i=0; i<imageList.size(); i++){
             if(imageList.get(i).getDimensions().equals(screenDimensions)) count++;
+            if(Integer.valueOf(imageList.get(i).getDimensions())<=Integer.valueOf(screenDimensions)) count++;
         }
         return count;
     }
