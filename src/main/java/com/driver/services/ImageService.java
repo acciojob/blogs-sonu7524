@@ -29,6 +29,8 @@ public class ImageService {
         imageList.add(image);
         blog.setImageList(imageList);
         blogRepository2.save(blog);
+        image.setBlog(blog);
+        imageRepository2.save(image);
         return image;
     }
 
