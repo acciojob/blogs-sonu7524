@@ -26,6 +26,7 @@ public class BlogService {
         // set all attributes
         blog.setTitle(title);
         blog.setContent(content);
+        blog.setPubDate(new Date());
         User user = userRepository1.findById(userId).get();
         List<Blog> blogList = user.getBlogList();
         blogList.add(blog);
